@@ -1,24 +1,30 @@
 import '../App.css'
-function BnBGallery({bnbs}){
+function BnBGallery({bnbs,setSelectedRental,handleAddToCart}){
    return(
     <>
     {
-        bnbs.map((bnb) =>{
+        bnbs.map((bnb,index) =>{
+            const handleAddToCartClick = () => {
+                // Update the selectedRental state
+                setSelectedRental(bnb);
+                // Call the handleAddToCart function with the selected rental
+                handleAddToCart(bnb);
+              };
           return(
-            <div className="img-card">
+            <div className="img-card" key={`bnb-${index}`}>
                 <div className='image'>
                     <img src={bnb.image} alt="image"/>  
                     <div className='text'>
                       <button> <h6>{bnb.houseType}</h6> </button>    
                     </div> 
                     <div className='reviews'>
-                        <span class="material-symbols-outlined">favorite</span>
+                        <span className="material-symbols-outlined">favorite</span>
                     </div>
                 </div>
                 <div className='location'>
                     <p>{`${bnb.location.city} , ${bnb.location.country}`}</p>
                     <div className='stars'>
-                        <span class="material-symbols-outlined">star</span>
+                        <span className="material-symbols-outlined">star</span>
                         <p>{bnb.rating.stars}</p>
                     </div>
                 </div>
@@ -27,8 +33,9 @@ function BnBGallery({bnbs}){
                 </div>
                 <div className='payment'>
                 <p>{`$${bnb.payment.cost} , ${bnb.payment.description}`}</p>
+                 <button className='book-rental' type="button" onClick= {handleAddToCartClick}>Book Rental</button>
                 </div>
-               
+                
             </div>
           )
         })

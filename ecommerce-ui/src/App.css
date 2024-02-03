@@ -13,10 +13,13 @@
   flex-wrap: wrap;
   background-color: rgb(247,247,247);
   justify-content: end;
-  color:black;
+  
   gap:10px;
   text-decoration: none;
   padding: 10px;
+}
+.top-head a{
+  color:black;
 }
 
 .heading{
@@ -31,9 +34,19 @@
   height: 8vh;
   padding-top: 15px;
 }
+.bnb{
+  color:rgb(255,56,92)
+}
 .head{
   background-color: rgb(255,255,255);
   width:100%;
+  
+}
+.head .center-links a{
+  color:rgb(113,113,113);
+}
+.logins a{
+  color:black;
 }
 
 .navbar{
@@ -57,29 +70,29 @@
   flex-direction: row;
   justify-content: flex-end;
 }
-.material-symbols-outlined{
+.logins .material-symbols-outlined{
   font-size: 20px;
+  margin-left:8px;
 }
 .rental-shoppingcart{
   display:grid;
   grid-template-columns: 55% 45%;
-  justify-content: center;
+  justify-content: start;
 }
 .searchField{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
 }
 .input-field{
-  width:300px;
+  width:240px;
   margin-top:40px;
   margin-right: 10px;
-  padding: 10px;
+  padding: 5px;
 }
-.calendar{
-  padding:20px;
+.calendar-input{
+  padding-top:10px;
   cursor: pointer;
-  border: 2px solid gray;
   justify-content: center;
 }
 .image-gallery {
@@ -90,7 +103,6 @@
   justify-content:center;
   margin: 50px auto;
   width:100%;
-  background-color: rgb(247,247,247);
 }
 .image-gallery .img-card {
   position: relative;
@@ -145,7 +157,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top:6px; 
-  
 }
 
 .location .stars{
@@ -158,37 +169,56 @@
 .material-symbols-outlined{
   margin-top: inherit;
 }
-.image-gallery .pagination{
-	width: 100%;
-	float: left;
-	padding:15px;
-	text-align: center;
+.img-card .payment{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.img-card .payment button{
+  margin: 13px;
+}
+.shopping-cart{
+  padding-top:48px;
+}
+.shopping-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
+  gap:10px;
+  
 }
-.image-gallery .pagination div{
-	display: inline-block;
-	margin:0 10px;
+ .book-image img{
+  width: 250px;
 }
-.image-gallery .pagination .page{
-	color:gray;
+.shopping-item .details{
+  line-height: 8px;
 }
-.image-gallery .pagination .prev{
- color:#000;
- border:1px solid #000;
- font-size:15px;
- padding:7px 15px;
- cursor: pointer;
+.shopping-item .details span input{
+  width:180px;
 }
-.image-gallery .pagination .next{
- color:#000;
- border:1px solid #000;
- font-size:15px;
- padding:7px 15px;
- cursor: pointer;
+.shopping-item .details .booking .delete-item{
+  float: right;
 }
- 
 
+.footer-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  background-color: black;
+  color:white;
+  text-align: start;
+  gap:190px;
+  padding:45px;
+}
+ ul li{
+  list-style: none;
+}
+.row-2 li{
+  color:rgb(126,126,126)
+}
 
 /* Media query for small screens */
 @media screen and (max-width: 1200px) {
@@ -198,4 +228,5 @@
  .logins{
   display: none;
  }
+ 
 }
