@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../App.css'
+import PropTypes from "prop-types";
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -57,4 +58,10 @@ function SearchForm({setCheckInDate,setCheckOutDate}){
         </>
     )
 }
+
+SearchForm.propTypes = {
+    setCheckInDate: PropTypes.PropTypes.func.isRequired,
+    setCheckOutDate:PropTypes.func.isRequired,
+};
+
 export default SearchForm

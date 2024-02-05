@@ -9,6 +9,7 @@ function BnB() {
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [selectedRental, setSelectedRental] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+  const [showShoppingCart,setshowShoppingCart] = useState('hide') 
 
   const handleAddToCart = (selectedRental) => {
     if (checkInDate && checkOutDate && selectedRental) {
@@ -42,7 +43,16 @@ function BnB() {
     setCartItems([...arr2])
     }
   }
-  
+
+  const handleshowCart = () =>{
+    if (showShoppingCart === 'hide'){
+        setshowShoppingCart('')
+    }
+    else{
+        setshowShoppingCart('hide')
+    } 
+  }
+
   return (
     <>
         <div className='top-head'>
@@ -70,7 +80,12 @@ function BnB() {
                 </div>
             </div> 
             <div className='heading'>
-                <h4>Learn About Guest Favourites, most loved homes of BnB</h4>
+                <div className='head-text'> <h4>Learn About Guest Favourites, most loved homes of BnB</h4></div>
+                <div className='cart' onClick= {handleshowCart}>
+                        <button ><span className="material-symbols-outlined">shopping_bag</span></button>
+                        <span className="cart-count">{cartItems.length} </span>
+                         
+                </div> 
             </div>  
         </div>
       <div className='rental-shoppingcart'>
@@ -82,7 +97,8 @@ function BnB() {
             <BnBGallery bnbs = {BnBs} setSelectedRental = {setSelectedRental} handleAddToCart = {handleAddToCart}/>
           </section>
         </div>
-        <div className='shopping-cart'>
+
+        <div className={`${showShoppingCart} shopping-cart`}>
            <h4>Shopping Cart</h4>
           <ShoppingCart cartItems = {cartItems} handleDeleteItem = {handleDeleteItem}/>
         </div>

@@ -7,6 +7,9 @@
   font-family: "Poppins", sans-serif;
   top:0;
 }
+.hide{
+  display: none !important;
+}
 .top-head{
   display: flex;
   flex-direction: row;
@@ -22,18 +25,42 @@
   color:black;
 }
 
-.heading{
+.heading { 
   background-color: rgb(247,247,247);
   top:0;
   color:rgb(34,34,34);
   width: 100%;
   display: flex;
   text-align: center;
+  align-items: center;
   justify-content: center;
-  text-decoration:underline;
   height: 8vh;
   padding-top: 15px;
 }
+.head-text{
+  text-decoration:underline;
+  width:80%;
+}
+
+.cart{
+  display: flex;
+  width:20%;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+  display: inline-block;
+}
+.cart .cart-count {
+  position: absolute;
+  top: 50%; /* Adjust as needed to vertically center */
+  left: 50%; /* Adjust as needed to horizontally center */
+  transform: translate(-50%, -50%);
+  color: black;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+}
+
 .bnb{
   color:rgb(255,56,92)
 }
@@ -75,9 +102,14 @@
   margin-left:8px;
 }
 .rental-shoppingcart{
-  display:grid;
-  grid-template-columns: 55% 45%;
-  justify-content: start;
+  display: table;
+  width:100%;
+}
+.rental,.shopping-cart{
+  display: table-cell;
+}
+.shopping-cart{
+  width:45%;
 }
 .searchField{
   display: flex;
@@ -108,16 +140,18 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  background: #f2f2f2;
   border-radius: 4px;
   overflow: hidden;
   width: 330px;
   line-height: 11px;
 }
-.image {
+
+.img-card > .image img {
   position: relative;
- 
+  border-radius: 10%;
+  
 }
+
 .text > button{
   position: absolute;
   top:15px;
@@ -137,13 +171,7 @@
   right:4px;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 20,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
+
 
 
 .image-gallery .img-card img {
@@ -156,7 +184,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top:6px; 
+  margin-top:16px; 
 }
 
 .location .stars{
@@ -193,7 +221,7 @@
   width: 250px;
 }
 .shopping-item .details{
-  line-height: 8px;
+  line-height: 7px;
 }
 .shopping-item .details span input{
   width:180px;
@@ -205,7 +233,7 @@
 .footer-section{
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   align-items: start;
   background-color: black;
   color:white;

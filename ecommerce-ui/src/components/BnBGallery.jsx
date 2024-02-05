@@ -1,4 +1,6 @@
 import '../App.css'
+import PropTypes from "prop-types";
+
 function BnBGallery({bnbs,setSelectedRental,handleAddToCart}){
    return(
     <>
@@ -44,4 +46,12 @@ function BnBGallery({bnbs,setSelectedRental,handleAddToCart}){
     </>
    )
 }
+
+
+BnBGallery.propTypes = {
+bnbs: PropTypes.arrayOf(PropTypes.object).isRequired,
+setSelectedRental:PropTypes.func.isRequired,
+handleAddToCart:PropTypes.func.isRequired
+};
+
 export default BnBGallery
